@@ -66,6 +66,8 @@ class shakhs(raas):
         self.mashinha=[]
         self.khaneha=[]
         self.family=[]
+        self.hesabha=[]
+        self.hamrahha=[]
 
  
 hesabbanki_csv = pd.read_csv('accounts.csv')
@@ -98,8 +100,10 @@ for i in range(l):
 
 l =len(hamrah_csv)
 for i in range(l):
-    hamrah.dic[hamrah_csv[i:i + 1]['sim'].iloc[0]] =hamrah(hamrah_csv[i:i + 1]['codemeli'].iloc[0], hamrah_csv[i:i + 1]['sim'].iloc[0], hamrah_csv[i:i + 1]['operator'].iloc[0])
+    hamrah.dic[hamrah_csv[i:i + 1]['sim'].iloc[0]] =hamrah(str(hamrah_csv[i:i + 1]['codemeli'].iloc[0]), hamrah_csv[i:i + 1]['sim'].iloc[0], hamrah_csv[i:i + 1]['operator'].iloc[0])
+    shakhs.dic[str(hamrah_csv[i:i + 1]['codemeli'].iloc[0])].hamrahha.append(hamrah_csv[i:i + 1]['sim'].iloc[0])
 
 l=len(hesabbanki_csv)
 for i in range(l):
     hesabbanki.dic[str(hesabbanki_csv[i:i + 1]['shhesab'].iloc[0])] =hesabbanki(str(hesabbanki_csv[i:i + 1]['codemeli'].iloc[0]), str(hesabbanki_csv[i:i + 1]['namebank'].iloc[0]), hesabbanki_csv[i:i + 1]['shshaba'].iloc[0], str(hesabbanki_csv[i:i + 1]['shhesab'].iloc[0]))
+    shakhs.dic[str(hesabbanki_csv[i:i + 1]['codemeli'].iloc[0])].hesabha.append(str(hesabbanki_csv[i:i + 1]['codemeli'].iloc[0]))

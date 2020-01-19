@@ -86,4 +86,3 @@ for i in range(l):
     a=str(family_csv[i:i+1]['prev'].iloc[0])+ "+" +str(family_csv[i:i+1]['next'].iloc[0])
     family.dic[a] =family(a, family_csv[i:i + 1]['nesbat'].iloc[0], family_csv[i:i + 1]['shoruenesbat'].iloc[0], family_csv[i:i + 1]['next'].iloc[0], family_csv[i:i + 1]['prev'].iloc[0])
     shakhs.dic[str(family_csv[i:i + 1]['prev'].iloc[0])].family.append(family_csv[i:i + 1]['next'].iloc[0])
-
