@@ -2,8 +2,10 @@ from yal import *
 
 suspect_name=[]
 suspect_key=[]
+iii=0
 for k,v in shakhs.dic.items():
-    if ((v.mahalekar == 'بنادر') or (v.mahalekar == 'گمرک')):
+    if ((v.mahalekar == 'گروه بنادر ودریانوردی') or (v.mahalekar == 'گمرگ ایران')):
+        iii+=1
         havemashin = False
         for m in v.mashinha:
             if int(malekiat.dic[m].tamalok[0:4])>2018:
@@ -37,4 +39,5 @@ for k,v in shakhs.dic.items():
                 if havemashin == True:
                     break
 
+print(iii)
 print(suspect_name)

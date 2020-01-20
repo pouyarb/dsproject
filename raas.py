@@ -89,21 +89,26 @@ shakhs_csv.columns = ['name','familyname','codemeli','tarikhtavalod','mahaletava
 l=len(shakhs_csv)
 for i in range(l):
     shakhs.dic[str(shakhs_csv[i:i + 1]['codemeli'].iloc[0])] =shakhs(shakhs_csv[i:i + 1]['name'].iloc[0], shakhs_csv[i:i + 1]['familyname'].iloc[0], shakhs_csv[i:i + 1]['tarikhtavalod'].iloc[0], shakhs_csv[i:i + 1]['mahaletavalod'].iloc[0], shakhs_csv[i:i + 1]['mahalekar'].iloc[0])
+print('people read')
 
 l=len(khane_csv)
 for i in range(l):
     khane.dic[khane_csv[i:i + 1]['codeposti'].iloc[0]] =khane(khane_csv[i:i + 1]['codemeli'].iloc[0], khane_csv[i:i + 1]['gheymat'].iloc[0], khane_csv[i:i + 1]['codeposti'].iloc[0], khane_csv[i:i + 1]['metraj'].iloc[0], khane_csv[i:i + 1]['addres'].iloc[0])
+print('homes read')
 
 l=len(mashin_csv)
 for i in range(l):
     mashin.dic[mashin_csv[i:i + 1]['pelak'].iloc[0]] =mashin(mashin_csv[i:i + 1]['pelak'].iloc[0], mashin_csv[i:i + 1]['codemeli'].iloc[0], mashin_csv[i:i + 1]['model'].iloc[0], mashin_csv[i:i + 1]['rang'].iloc[0])
+print('cars read')
 
 l =len(hamrah_csv)
 for i in range(l):
     hamrah.dic[hamrah_csv[i:i + 1]['sim'].iloc[0]] =hamrah(str(hamrah_csv[i:i + 1]['codemeli'].iloc[0]), hamrah_csv[i:i + 1]['sim'].iloc[0], hamrah_csv[i:i + 1]['operator'].iloc[0])
     shakhs.dic[str(hamrah_csv[i:i + 1]['codemeli'].iloc[0])].hamrahha.append(hamrah_csv[i:i + 1]['sim'].iloc[0])
+print('phones read')
 
 l=len(hesabbanki_csv)
 for i in range(l):
     hesabbanki.dic[str(hesabbanki_csv[i:i + 1]['shhesab'].iloc[0])] =hesabbanki(str(hesabbanki_csv[i:i + 1]['codemeli'].iloc[0]), str(hesabbanki_csv[i:i + 1]['namebank'].iloc[0]), hesabbanki_csv[i:i + 1]['shshaba'].iloc[0], str(hesabbanki_csv[i:i + 1]['shhesab'].iloc[0]))
     shakhs.dic[str(hesabbanki_csv[i:i + 1]['codemeli'].iloc[0])].hesabha.append(str(hesabbanki_csv[i:i + 1]['codemeli'].iloc[0]))
+print('accounts read')
