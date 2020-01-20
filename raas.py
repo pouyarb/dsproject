@@ -88,7 +88,7 @@ shakhs_csv.columns = ['name','familyname','codemeli','tarikhtavalod','mahaletava
 
 l=len(shakhs_csv)
 for i in range(l):
-    shakhs.dic[str(shakhs_csv[i:i + 1]['codemeli'].iloc[0])] =shakhs(shakhs_csv[i:i + 1]['name'].iloc[0], shakhs_csv[i:i + 1]['familyname'].iloc[0], shakhs_csv[i:i + 1]['tarikhtavalod'].iloc[0], shakhs_csv[i:i + 1]['mahaletavalod'].iloc[0], shakhs_csv[i:i + 1]['mahalekar'].iloc[0])
+    shakhs.dic[str(shakhs_csv[i:i + 1]['codemeli'].iloc[0])] =shakhs(shakhs_csv[i:i + 1]['name'].iloc[0], shakhs_csv[i:i + 1]['familyname'].iloc[0],str(shakhs_csv[i:i + 1]['codemeli'].iloc[0]), shakhs_csv[i:i + 1]['tarikhtavalod'].iloc[0], shakhs_csv[i:i + 1]['mahaletavalod'].iloc[0], shakhs_csv[i:i + 1]['mahalekar'].iloc[0])
 print('people read')
 
 l=len(khane_csv)
