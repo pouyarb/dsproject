@@ -34,9 +34,9 @@ class tamas(yal):
         self.zaman=zaman
         self.modat=modat
 
-class family(yal):
 
-    dic={}
+class Family(yal):
+    dic = dict()
     
     def __init__(self,tarkibi=0, nesbat=0, shoruenesbat=0, next=None, prev=None):
         super(family,self).__init__(tarkibi,next,prev)
@@ -51,7 +51,7 @@ malekiat_csv = pd.read_csv('ownerships.csv')
 malekiat_csv.columns = ['prev','next','sabteahval','tamalok', 'pardakhti']
 
 family_csv = pd.read_csv('relationships.csv')
-family_csv.columns = ['prev','next','nesbat','shoruenesbat']
+family_csv.columns = ['prev', 'next', 'nesbat', 'shoruenesbat']
 
 tarakonesh_csv = pd.read_csv('transactions.csv')
 tarakonesh_csv.columns = ['prev','next','shomare','zaman','mablagh']
@@ -59,7 +59,11 @@ tarakonesh_csv.columns = ['prev','next','shomare','zaman','mablagh']
 l=len(tamsa_csv)
 for i in range(l):
     a=tamsa_csv[i:i+1]['shomare'].iloc[0]
-    tamas.dic[a] =tamas(a, tamsa_csv[i:i + 1]['zaman'].iloc[0], tamsa_csv[i:i + 1]['modat'].iloc[0], tamsa_csv[i:i + 1]['next'].iloc[0], tamsa_csv[i:i + 1]['prev'].iloc[0])
+    tamas.dic[a] = tamas(
+        a, tamsa_csv[i:i + 1]['zaman'].iloc[0],
+        tamsa_csv[i:i + 1]['modat'].iloc[0], tamsa_csv[i:i + 1]['next'].iloc[0],
+        tamsa_csv[i:i + 1]['prev'].iloc[0]
+    )
     hamrah.dic[tamsa_csv[i:i + 1]['next'].iloc[0]].in_tamas.append(a)
     hamrah.dic[tamsa_csv[i:i + 1]['prev'].iloc[0]].out_tamas.append(a)
 
